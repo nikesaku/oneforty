@@ -1,0 +1,19 @@
+<%= form_with(model: @note, local: true ,url: choose_new_or_edit ) do |form| %>
+<% if @note.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @note.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p><%= form.label :content %>
+      <%= form.text_field :content %></p>
+  </div>
+</div>
+<%= form.submit %>
+<% end %>

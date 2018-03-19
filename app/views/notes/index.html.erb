@@ -1,0 +1,19 @@
+<h3>
+<div>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+</div>
+</h3>
+<div class="row">
+  <% @notes.each do |note| %>
+      <div class="panel panel-default col-md-3">
+        <div class="panel-body">
+          <p><%= note.content %></p>
+          <p>
+              <%= link_to '詳細', note_path(note.id), class: "btn btn-default" %>
+          </p>
+        </div>
+      </div>
+  <% end %>
+</div>

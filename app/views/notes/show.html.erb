@@ -1,0 +1,11 @@
+<h1>ノートの詳細画面</h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p><%= @note.content %></p>
+    <p>
+      <%= link_to '編集', edit_note_path(@note.id), class: "btn btn-info" %>
+      <%= link_to '削除', note_path(@note.id), method: :delete ,data: { confirm: '本当に削除していいですか？'}, class: "btn btn-danger" %>
+    </p>
+  </div>
+</div>
